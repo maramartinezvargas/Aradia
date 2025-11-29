@@ -1,6 +1,6 @@
 # **Aradia – Juego de Adivinación con IA**
 
-Aradia es una aplicación web creada con Flask que simula un pequeño juego de adivinación: inspirada en la clásica web de Akinator ("el genio que lee la mente") la IA intenta averiguar en qué personaje está pensando el usuario haciendo preguntas sencillas.
+Aradia es una aplicación web creada con Flask que simula un pequeño juego de adivinación: inspirándome en la clásica web de Akinator ("el genio que lee la mente"), la IA intenta averiguar en qué personaje está pensando el usuario haciendo preguntas sencillas.
 La conversación aparece en formato chat, con burbujas de estilo mensajería.
 
 La IA responde siempre en formato JSON y sigue un conjunto de reglas diseñado para mantener la conversación fluida, divertida y coherente.
