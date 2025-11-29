@@ -1,0 +1,206 @@
+body {
+    margin: 0;
+    background: #1d1d1d;
+    font-family: "Inter", sans-serif;
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    min-height: 100vh;     
+    color: #fff;
+}
+
+.chat-container {
+    width: 420px;
+    background: #242424;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(14, 14, 14, 0.5);
+}
+
+.title {
+    text-align: left;
+    color: #b45a8f;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+#chat-box {
+    max-height: 500px;
+    min-height: 500px;
+    font-size: 0.8rem;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+/* --- Simulación de burbujas de chat --- */
+
+.bubble {
+    padding: 12px 15px;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    width: fit-content;
+    max-width: 85%;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Burbujas de la IA */
+.bot {
+    background: #1e1e1e;
+    border-left: 2px solid #b45a8f;
+}
+
+/* respuestas de adivinanza */
+.bot.guess {
+    border-left-color: #80b3ff;
+}
+
+/* Burbujas de usuario */
+.user {
+    background: #1f3226;
+    border-right: 2px solid #80b3ff;
+    margin-left: auto;
+}
+
+/* Burbujas de error */
+.error {
+    background: #331d1d;
+    border-left: 2px solid #ff5c5c;
+}
+
+/* Texto dentro de las burbujas */
+.bubble-type {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+/* Texto principal  de las burbujas */
+.bubble-text {
+    font-size: 0.8rem;
+    line-height: 1.2;
+}
+
+/* --- Formulario --- */
+
+.input-area {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.input-area input {
+    flex: 1;
+    padding: 12px;
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #fff;
+}
+
+.input-area input:focus {
+    border-color: #b45a8f;
+    outline: none;
+}
+
+.input-area button {
+    padding: 12px 20px;
+    background: #b45a8f;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+}
+
+.input-area button:hover {
+    background: #b785d8;
+}
+
+/* --- Scrollbar --- */
+
+#chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background: #494949;
+    border-radius: 20px;
+}
+
+/* --- Animación de aparición --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Burbuja de "escribiendo..." --- */
+
+.typing {
+    background: #1e1e1e;
+    border-left: 4px solid #b45a8f;
+    width: 60px;
+}
+
+.typing-dots {
+    display: flex;
+    gap: 5px;
+    padding: 5px 0;
+    justify-content: center;
+}
+
+.typing-dots span {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: #b45a8f;
+    border-radius: 50%;
+    animation: blink 1.4s infinite both;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0% { opacity: 0.2; transform: translateY(0); }
+    20% { opacity: 1; transform: translateY(-2px); }
+    100% { opacity: 0.2; transform: translateY(0); }
+}
+
+/* --- Wrappers de burbujas con avatar --- */
+
+.bubble-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.bot-wrap {
+    flex-direction: row; /* IA a la izquierda */
+}
+
+.user-wrap {
+    flex-direction: row-reverse; /* Usuario a la derecha */
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #222;
+    /*padding: 6px;*/
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    flex-shrink: 0;
+}
+
+.bot-avatar {
+    border: 2px solid #b45a8f;
+}
+
+.user-avatar {
+    border: 2px solid #80b3ff;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Aradia - ¿Sabré adivinar tu personaje?</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <!-- Alinear a la izquierda el título con bootstrap-->
+         <div class="chat-header header-left">
+            <h3 class="title">Aradia</h3>
+        </div>
+
+        <div id="chat-box">
+            <!-- Burbujas del historial -->
+            <!-- Se construye con Jinja2 para lograr la persistencia del chat y renderizar el historial -->
+
+            <!-- Iterar sobre las entradas del historial -->
+            {% for entry in history %}
+                {% if entry["role"] == "user" %}
+                    <div class="bubble-wrapper user-wrap">
+                        <img class="avatar user-avatar" src="{{ url_for('static', filename='user.svg') }}">
+                        <div class="bubble user">
+                            <div class="bubble-type">Tú</div>
+                            <div class="bubble-text">{{ entry["content"] }}</div>
+                        </div>
+                    </div>
+
+                {% elif entry["role"] == "assistant" %}
+                    <div class="bubble-wrapper bot-wrap">
+                        <img class="avatar bot-avatar" src="{{ url_for('static', filename='ai.svg') }}">
+                        <div class="bubble bot">
+                            <div class="bubble-type">Aradia</div>
+                            <div class="bubble-text">{{ entry["content"] }}</div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            <!-- Tres puntitos para simular un "ESCRIBIENDO..." -->
+            {% if typing %}
+                <div class="bubble-wrapper bot-wrap">
+                    <img class="avatar bot-avatar" src="{{ url_for('static', filename='ai.svg') }}">
+                    <div class="bubble bot typing">
+                        <div class="typing-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+
+        <form method="POST" class="input-area">
+            <input type="text" name="reply" placeholder="Tu mensaje…" required autofocus autocomplete="off">
+            <button>Enviar</button>
+        </form>
+
+    </div>
+
+    <script>
+        // Script minimo para hacer scroll automatico al final del chat
+        const chatBox = document.getElementById("chat-box");
+        chatBox.scrollTop = chatBox.scrollHeight;
+    </script>
+
+</body>
+
+</html>
