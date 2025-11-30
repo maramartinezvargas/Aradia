@@ -56,7 +56,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Crea un archivo **.env** (no se sube al repositorio):
+4. Crea un archivo **.env** (por buenas prácticas, no se incluye en este repositorio):
 
 ```
 OPENROUTER_API_KEY=tu_api_key
