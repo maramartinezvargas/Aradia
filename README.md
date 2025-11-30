@@ -1,9 +1,21 @@
 # **Aradia – Juego de Adivinación con IA**
 
-Aradia es una aplicación web creada con Flask que simula un pequeño juego de adivinación: inspirándome en la clásica web de Akinator ("el genio que lee la mente"), la IA intenta averiguar en qué personaje está pensando el usuario haciendo preguntas sencillas.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Flask-Framework-000000?logo=flask&logoColor=white" />
+  <img src="https://img.shields.io/badge/Jinja2-Templates-B41717?logo=jinja&logoColor=white" />
+  <img src="https://img.shields.io/badge/HTML5-Frontend-E34F26?logo=html5&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-Estilos-1572B6?logo=css3&logoColor=white" />
+  <img src="https://img.shields.io/badge/JSON-Structured Data-000000?logo=json&logoColor=white" />
+  <img src="https://img.shields.io/badge/OpenRouter-API-FF4F00?logo=openai&logoColor=white" />
+</p>
+
+Aradia es una pequeña aplicación web creada con Flask que simula un pequeño juego de adivinación: inspirándome en la clásica web de Akinator ("el genio que lee la mente"), la IA intenta averiguar en qué personaje está pensando el usuario haciendo preguntas sencillas.
 La conversación aparece en formato chat, con burbujas de estilo mensajería.
 
 La IA responde siempre en formato JSON y sigue un conjunto de reglas diseñado para mantener la conversación fluida, divertida y coherente.
+
+Se trata tan solo de una prueba de concepto más que un proyecto completo, pero me sirvió para entender cómo funcionan las peticiones, los endpoints y el flujo entre backend y modelo.
 
 ---
 
