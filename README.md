@@ -11,7 +11,7 @@ La IA responde siempre en formato JSON y sigue un conjunto de reglas diseñado p
 
 * Conversación estilo chat con burbujas (HTML + CSS).
 * La IA inicia el juego automáticamente.
-* Persistencia de la conversación mientras la pestaña siga abierta.
+* Persistencia de la conversación.
 * Interfaz ligera construida con Flask y Jinja2.
 * Respuestas en JSON estrictas, interpretadas por la app.
 * Llamadas a modelos de OpenRouter (cualquier modelo compatible).
